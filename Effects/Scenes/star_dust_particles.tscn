@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bsx65h7f3c2tt"]
+
+[ext_resource type="Texture2D" uid="uid://bmm18o63mhkyu" path="res://sprites/ui/star particle.png" id="1_7btmk"]
+[ext_resource type="Texture2D" uid="uid://b4yqj2fn1dysc" path="res://sprites/ui/star.png" id="2_6kium"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_7btmk"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6kium"]
+particle_flag_disable_z = true
+attractor_interaction_enabled = false
+hue_variation_min = -0.17
+hue_variation_max = 0.13
+collision_mode = 1
+collision_friction = 0.33
+collision_bounce = 0.23
+collision_use_scale = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yjtrp"]
+particle_flag_disable_z = true
+hue_variation_min = -0.23
+hue_variation_max = 0.18
+collision_mode = 2
+
+[node name="star_dust_particles" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_7btmk")
+emitting = false
+amount = 10
+texture = ExtResource("1_7btmk")
+lifetime = 2.03
+one_shot = true
+preprocess = 1.16
+speed_scale = 3.06
+explosiveness = 0.21
+randomness = 0.07
+process_material = SubResource("ParticleProcessMaterial_6kium")
+
+[node name="star_particle" type="GPUParticles2D" parent="."]
+emitting = false
+amount = 3
+texture = ExtResource("2_6kium")
+lifetime = 7.63
+one_shot = true
+speed_scale = 3.89
+explosiveness = 0.21
+randomness = 0.34
+process_material = SubResource("ParticleProcessMaterial_yjtrp")

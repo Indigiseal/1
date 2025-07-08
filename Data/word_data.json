@@ -1,0 +1,190 @@
+{
+	"about": {
+		"sound_path": "res://Sounds/Words/about.mp3",
+		"times_correct": 0
+	},
+	"because": {
+		"sound_path": "res://Sounds/Words/because.mp3",
+		"times_correct": 0
+	},
+	"been": {
+		"sound_path": "res://Sounds/Words/been.mp3",
+		"times_correct": 0
+	},
+	"before": {
+		"sound_path": "res://Sounds/Words/before.mp3",
+		"times_correct": 0
+	},
+	"best": {
+		"sound_path": "res://Sounds/Words/best.mp3",
+		"times_correct": 0
+	},
+	"better": {
+		"sound_path": "res://Sounds/Words/better.mp3",
+		"times_correct": 0
+	},
+	"both": {
+		"sound_path": "res://Sounds/Words/both.mp3",
+		"times_correct": 0
+	},
+	"buy": {
+		"sound_path": "res://Sounds/Words/buy.mp3",
+		"times_correct": 0
+	},
+	"call": {
+		"sound_path": "res://Sounds/Words/call.mp3",
+		"times_correct": 0
+	},
+	"cold": {
+		"sound_path": "res://Sounds/Words/cold.mp3",
+		"times_correct": 0
+	},
+	"does": {
+		"sound_path": "res://Sounds/Words/does.mp3",
+		"times_correct": 0
+	},
+	"fast": {
+		"sound_path": "res://Sounds/Words/fast.mp3",
+		"times_correct": 0
+	},
+	"first": {
+		"sound_path": "res://Sounds/Words/first.mp3",
+		"times_correct": 0
+	},
+	"five": {
+		"sound_path": "res://Sounds/Words/five.mp3",
+		"times_correct": 0
+	},
+	"found": {
+		"sound_path": "res://Sounds/Words/found.mp3",
+		"times_correct": 0
+	},
+	"gave": {
+		"sound_path": "res://Sounds/Words/gave.mp3",
+		"times_correct": 0
+	},
+	"goes": {
+		"sound_path": "res://Sounds/Words/goes.mp3",
+		"times_correct": 0
+	},
+	"green": {
+		"sound_path": "res://Sounds/Words/green.mp3",
+		"times_correct": 0
+	},
+	"its": {
+		"sound_path": "res://Sounds/Words/its.mp3",
+		"times_correct": 0
+	},
+	"made": {
+		"sound_path": "res://Sounds/Words/made.mp3",
+		"times_correct": 0
+	},
+	"many": {
+		"sound_path": "res://Sounds/Words/many.mp3",
+		"times_correct": 0
+	},
+	"off": {
+		"sound_path": "res://Sounds/Words/off.mp3",
+		"times_correct": 0
+	},
+	"or": {
+		"sound_path": "res://Sounds/Words/or.mp3",
+		"times_correct": 0
+	},
+	"own": {
+		"sound_path": "res://Sounds/Words/own.mp3",
+		"times_correct": 0
+	},
+	"pull": {
+		"sound_path": "res://Sounds/Words/pull.mp3",
+		"times_correct": 0
+	},
+	"read": {
+		"sound_path": "res://Sounds/Words/read.mp3",
+		"times_correct": 0
+	},
+	"right": {
+		"sound_path": "res://Sounds/Words/right.mp3",
+		"times_correct": 0
+	},
+	"sing": {
+		"sound_path": "res://Sounds/Words/sing.mp3",
+		"times_correct": 0
+	},
+	"sit": {
+		"sound_path": "res://Sounds/Words/sit.mp3",
+		"times_correct": 0
+	},
+	"sleep": {
+		"sound_path": "res://Sounds/Words/sleep.mp3",
+		"times_correct": 0
+	},
+	"tell": {
+		"sound_path": "res://Sounds/Words/tell.mp3",
+		"times_correct": 0
+	},
+	"their": {
+		"sound_path": "res://Sounds/Words/their.mp3",
+		"times_correct": 0
+	},
+	"these": {
+		"sound_path": "res://Sounds/Words/these.mp3",
+		"times_correct": 0
+	},
+	"those": {
+		"sound_path": "res://Sounds/Words/those.mp3",
+		"times_correct": 0
+	},
+	"together": {
+		"sound_path": "res://Sounds/Words/together.mp3",
+		"times_correct": 0
+	},
+	"upon": {
+		"sound_path": "res://Sounds/Words/upon.mp3",
+		"times_correct": 0
+	},
+	"us": {
+		"sound_path": "res://Sounds/Words/us.mp3",
+		"times_correct": 0
+	},
+	"use": {
+		"sound_path": "res://Sounds/Words/use.mp3",
+		"times_correct": 0
+	},
+	"very": {
+		"sound_path": "res://Sounds/Words/very.mp3",
+		"times_correct": 0
+	},
+	"wash": {
+		"sound_path": "res://Sounds/Words/wash.mp3",
+		"times_correct": 0
+	},
+	"which": {
+		"sound_path": "res://Sounds/Words/which.mp3",
+		"times_correct": 0
+	},
+	"why": {
+		"sound_path": "res://Sounds/Words/why.mp3",
+		"times_correct": 0
+	},
+	"wish": {
+		"sound_path": "res://Sounds/Words/wish.mp3",
+		"times_correct": 0
+	},
+	"work": {
+		"sound_path": "res://Sounds/Words/work.mp3",
+		"times_correct": 0
+	},
+	"would": {
+		"sound_path": "res://Sounds/Words/would.mp3",
+		"times_correct": 0
+	},
+	"write": {
+		"sound_path": "res://Sounds/Words/write.mp3",
+		"times_correct": 0
+	},
+	"your": {
+		"sound_path": "res://Sounds/Words/your.mp3",
+		"times_correct": 0
+	}
+}

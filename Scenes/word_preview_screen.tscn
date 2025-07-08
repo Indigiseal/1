@@ -1,0 +1,88 @@
+[gd_scene load_steps=8 format=3 uid="uid://uoxaec7toplw"]
+
+[ext_resource type="Script" uid="uid://t1dk6wr3ppb3" path="res://Scenes/WordPreviewScreen.gd" id="1_8rn4w"]
+[ext_resource type="Texture2D" uid="uid://dkr7w1i4u0rm0" path="res://sprites/BG/BG3354s.png" id="2_a22sy"]
+[ext_resource type="Texture2D" uid="uid://ch3mp4x44pxpt" path="res://Effects/UIbar/buttonPlay1.png" id="3_a22sy"]
+[ext_resource type="Texture2D" uid="uid://d24opb6aa5wgr" path="res://Effects/UIbar/buttonPlay2.png" id="4_dsbrd"]
+[ext_resource type="AudioStream" uid="uid://cor6yjcxrw6yb" path="res://Sounds/press button.mp3" id="4_jhlch"]
+[ext_resource type="PackedScene" uid="uid://c72rwsfra8xul" path="res://WordButton.tscn" id="6_a22sy"]
+[ext_resource type="Texture2D" uid="uid://dj1fcxtbviiv2" path="res://sprites/BG/BG334s.png" id="7_dsbrd"]
+
+[node name="WordPreviewScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = 10.0
+offset_right = 2.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8rn4w")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -53.0
+offset_top = -3.0
+offset_right = 631.0
+offset_bottom = 353.0
+texture = ExtResource("2_a22sy")
+
+[node name="WordListContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 17.0
+offset_top = -89.0
+offset_right = 18.0
+offset_bottom = 103.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+
+[node name="WordGridContainer" type="GridContainer" parent="WordListContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 3
+columns = 4
+
+[node name="StartButton" type="TextureButton" parent="."]
+layout_mode = 2
+offset_left = 243.0
+offset_top = 256.0
+offset_right = 332.0
+offset_bottom = 332.0
+size_flags_horizontal = 8
+tooltip_text = "Play"
+texture_normal = ExtResource("3_a22sy")
+texture_pressed = ExtResource("4_dsbrd")
+
+[node name="ButtonClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_jhlch")
+
+[node name="WordButton" parent="." instance=ExtResource("6_a22sy")]
+layout_mode = 0
+offset_left = 27.0
+offset_top = -517.0
+offset_right = 650.0
+offset_bottom = -328.0
+texture_normal = ExtResource("7_dsbrd")
+
+[node name="TitleLabel" type="Label" parent="."]
+modulate = Color(1, 0.47451, 1, 1)
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+offset_left = -17.0
+offset_top = 23.0
+offset_right = 583.0
+offset_bottom = 123.0
+theme_override_font_sizes/font_size = 24
+text = "Practice Words"
+horizontal_alignment = 1
+autowrap_mode = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="finished" from="ButtonClickSound" to="." method="_on_button_click_sound_finished"]

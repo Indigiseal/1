@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo5lgt0bmm2me"]
+
+[ext_resource type="Texture2D" uid="uid://d3xl2iixa0rkj" path="res://sprites/BG/main.png" id="1_2s633"]
+[ext_resource type="Script" uid="uid://dvotbpxg50iyw" path="res://Scenes/Store.gd" id="1_fy3ub"]
+[ext_resource type="PackedScene" uid="uid://dhr04qd2id07m" path="res://Scenes/ExitButton.tscn" id="1_voxcw"]
+
+[node name="Store" type="Node2D"]
+script = ExtResource("1_fy3ub")
+
+[node name="BG" type="TextureRect" parent="."]
+offset_left = -31.0
+offset_top = -14.0
+offset_right = 679.0
+offset_bottom = 401.0
+texture = ExtResource("1_2s633")
+
+[node name="ExitButton" parent="." instance=ExtResource("1_voxcw")]
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_button_pressed"]

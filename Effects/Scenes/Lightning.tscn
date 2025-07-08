@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://wd4imfyxwyr2"]
+
+[ext_resource type="Texture2D" uid="uid://5rio6xg1mmsa" path="res://sprites/lightningNEW2.png" id="1_48yee"]
+[ext_resource type="Texture2D" uid="uid://dowiwkcagiuox" path="res://sprites/lightningNEW3.png" id="2_60v1c"]
+[ext_resource type="Texture2D" uid="uid://dck5vbim13r6x" path="res://sprites/lightningNEW4.png" id="3_1eb1a"]
+[ext_resource type="Texture2D" uid="uid://dko1lewaikumk" path="res://sprites/lightningNEW5.png" id="4_51ljn"]
+[ext_resource type="Texture2D" uid="uid://rvblt3alfpqg" path="res://sprites/lightningNEW6.png" id="5_5h118"]
+[ext_resource type="Texture2D" uid="uid://xnscx2v44irr" path="res://sprites/lightningNEW7.png" id="6_afs2p"]
+[ext_resource type="Texture2D" uid="uid://ds8pk72tb3ir" path="res://sprites/lightningNEW8.png" id="7_uhhew"]
+
+[sub_resource type="Animation" id="Animation_dmw44"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightningSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_y0yj4"]
+resource_name = "zap"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightningSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2, 0.266667, 0.366667, 0.433333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_48yee"), ExtResource("2_60v1c"), ExtResource("3_1eb1a"), ExtResource("4_51ljn"), ExtResource("5_5h118"), ExtResource("6_afs2p"), ExtResource("7_uhhew")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_11ikm"]
+_data = {
+&"RESET": SubResource("Animation_dmw44"),
+&"zap": SubResource("Animation_y0yj4")
+}
+
+[node name="Lightning" type="Node2D"]
+
+[node name="LightningSprite" type="Sprite2D" parent="."]
+position = Vector2(-83, 4)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_11ikm")
+}
+autoplay = "zap"

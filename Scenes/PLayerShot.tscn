@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://fjv3scxddkod"]
+
+[ext_resource type="Script" uid="uid://c4u5u6af5446a" path="res://Scenes/PlayerShot.gd" id="1_06ulu"]
+[ext_resource type="Texture2D" uid="uid://xm8dgsc0yt4c" path="res://sprites/effects/dust2.png" id="1_uu2sl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_06ulu"]
+radius = 6.0
+
+[node name="PlayerShot" type="Area2D"]
+script = ExtResource("1_06ulu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-79, -44)
+shape = SubResource("CircleShape2D_06ulu")
+debug_color = Color(0.211765, 0.933333, 0.996078, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-62, -29)
+texture = ExtResource("1_uu2sl")

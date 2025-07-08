@@ -1,0 +1,119 @@
+[gd_scene load_steps=21 format=3 uid="uid://df3f4ghh3psb6"]
+
+[ext_resource type="Script" uid="uid://bgiw5att2fcdo" path="res://Scenes/BossFight.gd" id="1_exr8x"]
+[ext_resource type="Texture2D" uid="uid://dv86kkwdyb4d1" path="res://sprites/BG/BG.png" id="2_qh7hi"]
+[ext_resource type="AudioStream" uid="uid://oi364x7qsdxx" path="res://Sounds/introBossFight.ogg" id="3_55aqt"]
+[ext_resource type="Texture2D" uid="uid://gi214sgop3o" path="res://sprites/Monsters/boss2.png" id="3_nvr14"]
+[ext_resource type="Shader" uid="uid://4u4gq7b22i44" path="res://Shaders/dissolve_shader.gdshader" id="3_s2nui"]
+[ext_resource type="AudioStream" uid="uid://hwy072om8k6g" path="res://Sounds/laserShot.wav" id="4_f70ux"]
+[ext_resource type="Script" uid="uid://bp8m1cw0ma2i8" path="res://Scenes/MainCamera.gd" id="5_d3lxl"]
+[ext_resource type="Texture2D" uid="uid://dbqvthvho2rki" path="res://sprites/HealthBarBOss1.png" id="6_f70ux"]
+[ext_resource type="Texture2D" uid="uid://btj58cpew4hbf" path="res://sprites/HealthBarBOss2.png" id="7_nvr14"]
+[ext_resource type="Texture2D" uid="uid://jva0xqc6dyou" path="res://sprites/BUTTONS/buttoEXIT1.png" id="8_qh7hi"]
+[ext_resource type="Texture2D" uid="uid://q1oolwur2sgd" path="res://sprites/BUTTONS/buttoEXIT11.png" id="9_af80e"]
+[ext_resource type="AudioStream" uid="uid://cb8bdvf4u16gx" path="res://Sounds/Music/721472__victor_natas__boss-fight.wav" id="10_af80e"]
+[ext_resource type="PackedScene" uid="uid://ciw61vrsj01cb" path="res://Scenes/EnergyBar.tscn" id="10_unmg2"]
+[ext_resource type="PackedScene" uid="uid://b7xx53rfegin2" path="res://Scenes/Player.tscn" id="11_5oi8w"]
+[ext_resource type="AudioStream" uid="uid://by6bd2sc4xvrs" path="res://Sounds/WinFANFARE.wav" id="15_7ekg7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_s2nui"]
+noise_type = 0
+seed = 3
+frequency = 0.06
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d3lxl"]
+noise = SubResource("FastNoiseLite_s2nui")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3lxl"]
+shader = ExtResource("3_s2nui")
+shader_parameter/dissolve_amount = 0.0
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_d3lxl")
+shader_parameter/dissolve_edge_size = 0.02
+shader_parameter/dissolve_edge_color = Color(1, 0.5, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_unmg2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_nvr14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s2nui"]
+radius = 18.3294
+height = 79.2359
+
+[node name="BossFight" type="Node2D"]
+script = ExtResource("1_exr8x")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -563.0
+offset_top = -193.0
+offset_right = 621.0
+offset_bottom = 177.0
+pivot_offset = Vector2(603, 295)
+texture = ExtResource("2_qh7hi")
+
+[node name="Boss" type="Area2D" parent="."]
+position = Vector2(199, 0)
+scale = Vector2(2.23684, 2.12025)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
+material = SubResource("ShaderMaterial_d3lxl")
+sprite_frames = SubResource("SpriteFrames_unmg2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss"]
+position = Vector2(-5.36471, -0.471642)
+shape = SubResource("CapsuleShape2D_s2nui")
+
+[node name="MainCamera" type="Camera2D" parent="."]
+script = ExtResource("5_d3lxl")
+
+[node name="RockFallSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_55aqt")
+
+[node name="HitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_f70ux")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI_RewardLabel" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="BossHealthBar" type="TextureProgressBar" parent="CanvasLayer"]
+offset_left = 463.0
+offset_top = 10.0
+offset_right = 588.0
+offset_bottom = 50.0
+value = 100.0
+texture_under = ExtResource("6_f70ux")
+texture_progress = ExtResource("7_nvr14")
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 532.0
+offset_top = 297.0
+offset_right = 612.0
+offset_bottom = 351.0
+texture_normal = ExtResource("8_qh7hi")
+texture_pressed = ExtResource("9_af80e")
+
+[node name="EnergyBar" parent="CanvasLayer" instance=ExtResource("10_unmg2")]
+offset_left = 22.0
+offset_top = 15.0
+offset_right = 121.0
+offset_bottom = 41.0
+
+[node name="FightMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_af80e")
+playback_type = 1
+
+[node name="Player" parent="." instance=ExtResource("11_5oi8w")]
+
+[node name="VictoryMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_7ekg7")
+
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="." method="_on_quit_button_pressed"]

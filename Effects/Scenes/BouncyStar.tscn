@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://etnawg7ke4jv"]
+
+[ext_resource type="AudioStream" uid="uid://tmsm5umjraag" path="res://Sounds/powerUp8.mp3" id="2_wasqg"]
+[ext_resource type="Texture2D" uid="uid://eevu1pmm4yv2" path="res://sprites/ui/dust2.png" id="5_bjntk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wkmjk"]
+radius = 8.0
+
+[node name="BouncyStar" type="RigidBody2D"]
+mass = 0.02
+gravity_scale = 0.0
+linear_damp = 0.1
+
+[node name="StarSprite1" type="Sprite2D" parent="."]
+position = Vector2(-2.38419e-07, -2.38419e-07)
+scale = Vector2(1, 0.966667)
+texture = ExtResource("5_bjntk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wkmjk")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="EmitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_wasqg")

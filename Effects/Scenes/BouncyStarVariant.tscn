@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjacxakp7h7wb"]
+
+[ext_resource type="Texture2D" uid="uid://b4yqj2fn1dysc" path="res://sprites/ui/star.png" id="1_ik5vu"]
+[ext_resource type="AudioStream" uid="uid://br5c3aq6ptfgk" path="res://Sounds/powerUp2.mp3" id="2_xyg6s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xb0hx"]
+
+[node name="BouncyStarVariant" type="RigidBody2D"]
+mass = 0.189
+gravity_scale = 0.172
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ik5vu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xb0hx")
+
+[node name="EmitSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_xyg6s")

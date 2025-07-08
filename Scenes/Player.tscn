@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7xx53rfegin2"]
+
+[ext_resource type="Texture2D" uid="uid://bjpdm7lvq3wck" path="res://sprites/Cat.png" id="1_gntrk"]
+[ext_resource type="Script" uid="uid://bsh7ju4ifcmuw" path="res://playersprite.gd" id="2_dewec"]
+[ext_resource type="Texture2D" uid="uid://0nva1iedeiks" path="res://sprites/ui/puff.png" id="3_5ixxa"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ycdy4"]
+lifetime_randomness = 0.1
+inherit_velocity_ratio = 0.108
+direction = Vector3(-1, 0, 0)
+spread = 30.0
+initial_velocity_min = 24.39
+initial_velocity_max = 45.3
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -14.63
+linear_accel_max = -0.700002
+attractor_interaction_enabled = false
+scale_min = 0.5
+color = Color(1, 1, 1, 0.85098)
+anim_speed_max = 0.45
+turbulence_noise_strength = 0.45
+turbulence_noise_scale = 0.862
+
+[node name="Player" type="Sprite2D"]
+
+[node name="playersprite" type="Sprite2D" parent="."]
+position = Vector2(-164, -22)
+texture = ExtResource("1_gntrk")
+script = ExtResource("2_dewec")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-17, -48)
+zoom = Vector2(0.8, 0.8)
+
+[node name="SmokeTrail" type="GPUParticles2D" parent="."]
+z_index = -1
+position = Vector2(-189, 2)
+amount = 6
+amount_ratio = 0.559
+texture = ExtResource("3_5ixxa")
+lifetime = 0.43
+preprocess = 1.0
+randomness = 0.15
+collision_base_size = 0.0
+trail_lifetime = 0.6
+trail_sections = 7
+trail_section_subdivisions = 3
+process_material = SubResource("ParticleProcessMaterial_ycdy4")

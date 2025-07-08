@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl77k8xe7hwah"]
+
+[ext_resource type="Script" uid="uid://d1njkjhpnmrfj" path="res://Tools/JsonGeneratorRunner.gd" id="1_xhmg0"]
+
+[node name="JsonGeneratorRunner" type="Node"]
+script = ExtResource("1_xhmg0")

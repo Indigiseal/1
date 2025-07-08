@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5gxv7qcsqymy"]
+
+[ext_resource type="Texture2D" uid="uid://18c1ajb2l56" path="res://sprites/effects/zapenemy1.png" id="1_05ubs"]
+[ext_resource type="Texture2D" uid="uid://v7jm8couwoel" path="res://sprites/effects/zapenemy2.png" id="2_05ubs"]
+
+[sub_resource type="Animation" id="Animation_viqef"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("LightningSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_05ubs")]
+}
+
+[sub_resource type="Animation" id="Animation_22ugb"]
+resource_name = "zap"
+length = 0.5
+
+[sub_resource type="Animation" id="Animation_05ubs"]
+resource_name = "zapEnemy"
+length = 0.4
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LightningSprite:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.233333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("1_05ubs"), ExtResource("2_05ubs")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_26nsw"]
+_data = {
+&"RESET": SubResource("Animation_viqef"),
+&"zap": SubResource("Animation_22ugb"),
+&"zapEnemy": SubResource("Animation_05ubs")
+}
+
+[node name="ZapEnemy" type="Node2D"]
+
+[node name="LightningSprite" type="Sprite2D" parent="."]
+visibility_layer = 5
+texture = ExtResource("1_05ubs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_26nsw")
+}
+autoplay = "zapEnemy"

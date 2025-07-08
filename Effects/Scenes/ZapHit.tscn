@@ -1,0 +1,97 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpk86juyb72wj"]
+
+[ext_resource type="Texture2D" uid="uid://2dmotkonton3" path="res://sprites/zapHit2.png" id="2_585v7"]
+[ext_resource type="Texture2D" uid="uid://18c1ajb2l56" path="res://sprites/effects/zapenemy1.png" id="3_44vao"]
+[ext_resource type="Texture2D" uid="uid://c5vnkc3cnamym" path="res://sprites/zapHit3.png" id="3_e2yvc"]
+[ext_resource type="Texture2D" uid="uid://v7jm8couwoel" path="res://sprites/effects/zapenemy2.png" id="4_585v7"]
+
+[sub_resource type="Animation" id="Animation_e2yvc"]
+resource_name = "PinkLightning"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ImpactSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("3_44vao"), ExtResource("4_585v7")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_upmsn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ImpactSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+
+[sub_resource type="Animation" id="Animation_o3v7q"]
+resource_name = "zap"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ImpactSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [null, ExtResource("2_585v7"), ExtResource("3_e2yvc")]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_44vao"]
+_data = {
+&"PinkLightning": SubResource("Animation_e2yvc"),
+&"RESET": SubResource("Animation_upmsn"),
+&"zap": SubResource("Animation_o3v7q")
+}
+
+[node name="ZapHit" type="Node2D"]
+
+[node name="ImpactSprite" type="Sprite2D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_44vao")
+}
+autoplay = "zap"

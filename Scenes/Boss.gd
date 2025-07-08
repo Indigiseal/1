@@ -1,0 +1,1 @@
+xtends AnimatedSprite2D
