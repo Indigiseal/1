@@ -1,0 +1,294 @@
+[gd_scene load_steps=33 format=3 uid="uid://cyxl68gsu1cq3"]
+
+[ext_resource type="Script" uid="uid://ct7i66txn5nlv" path="res://Main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bjpdm7lvq3wck" path="res://sprites/Cat.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://c1dvple6oywe4" path="res://sprites/BG/BG_front2.png" id="2_0odxb"]
+[ext_resource type="Texture2D" uid="uid://dv86kkwdyb4d1" path="res://sprites/BG/BG.png" id="2_4c57u"]
+[ext_resource type="PackedScene" uid="uid://b56xjfh487ppi" path="res://Effects/Scenes/WordTarget.tscn" id="2_h2yge"]
+[ext_resource type="Script" uid="uid://rwfcyo06mvmc" path="res://parallax_background.gd" id="2_lswn8"]
+[ext_resource type="Texture2D" uid="uid://dantvqplx7s5j" path="res://sprites/BG/BG_front1.png" id="3_lswn8"]
+[ext_resource type="Script" uid="uid://bsh7ju4ifcmuw" path="res://playersprite.gd" id="4_efxa6"]
+[ext_resource type="Texture2D" uid="uid://bo7kwcgem53oj" path="res://sprites/BG/whiteClouds.png" id="4_qsp4k"]
+[ext_resource type="Texture2D" uid="uid://0nva1iedeiks" path="res://sprites/ui/puff.png" id="5_dg77c"]
+[ext_resource type="Texture2D" uid="uid://bk1w0hkjnml40" path="res://sprites/BG/darkcloudClouds.png" id="5_kq58d"]
+[ext_resource type="Texture2D" uid="uid://b8a6hg3wfv0ln" path="res://sprites/BG/BG mountaint2.png" id="6_kq58d"]
+[ext_resource type="Texture2D" uid="uid://x5g8l5cixdvd" path="res://Effects/UIbar/heart_full.png" id="8_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://37mrkd75xuyu" path="res://Effects/Scenes/star_dust.tscn" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://d1fe3iepesiba" path="res://sprites/ui/energy bar filled.png" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bhvy12wrekoot" path="res://Effects/Scenes/StarDust.tscn" id="14_w48qg"]
+[ext_resource type="Texture2D" uid="uid://rraf6r8kohtl" path="res://Effects/UIbar/Bar2.png" id="15_kq58d"]
+[ext_resource type="Script" uid="uid://bgptemvv1pjt7" path="res://Effects/Scenes/StarDust.gd" id="15_vivmo"]
+[ext_resource type="PackedScene" uid="uid://etnawg7ke4jv" path="res://Effects/Scenes/BouncyStar.tscn" id="16_2cqfq"]
+[ext_resource type="Texture2D" uid="uid://1duor7oh2ro3" path="res://Effects/UIbar/Bar22.png" id="16_seu75"]
+[ext_resource type="Script" uid="uid://b3haccoyo4w7m" path="res://Effects/Scenes/BouncyStar.gd" id="17_yaehf"]
+[ext_resource type="PackedScene" uid="uid://cjacxakp7h7wb" path="res://Effects/Scenes/BouncyStarVariant.tscn" id="18_074og"]
+[ext_resource type="Texture2D" uid="uid://brtoj2l8td04o" path="res://Effects/UIbar/button mrouund.png" id="18_htxhm"]
+[ext_resource type="Texture2D" uid="uid://k1eg7ewrfmbs" path="res://Effects/UIbar/button mrouundDOWN.png" id="19_jq2sk"]
+[ext_resource type="PackedScene" uid="uid://wd4imfyxwyr2" path="res://Effects/Scenes/Lightning.tscn" id="29_htxhm"]
+[ext_resource type="PackedScene" uid="uid://dw77id13ag1oi" path="res://Enemies/EnemyMonster.tscn" id="29_kq58d"]
+[ext_resource type="PackedScene" uid="uid://cpk86juyb72wj" path="res://Effects/Scenes/ZapHit.tscn" id="29_seu75"]
+[ext_resource type="Script" uid="uid://dyxqldwsb77rk" path="res://Effects/Scenes/ZapHit.gd" id="30_htxhm"]
+[ext_resource type="Script" uid="uid://dw2spo02x5nhm" path="res://Effects/Scenes/lightning.gd" id="30_jq2sk"]
+[ext_resource type="Script" uid="uid://c1xyd6ou1sdu2" path="res://Enemies/EnemyMonster.gd" id="30_seu75"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ycdy4"]
+lifetime_randomness = 0.1
+inherit_velocity_ratio = 0.108
+direction = Vector3(-1, 0, 0)
+spread = 30.0
+initial_velocity_min = 24.39
+initial_velocity_max = 45.3
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -14.63
+linear_accel_max = -0.700002
+attractor_interaction_enabled = false
+scale_min = 0.5
+color = Color(1, 1, 1, 0.462745)
+anim_speed_max = 0.45
+turbulence_noise_strength = 0.45
+turbulence_noise_scale = 0.862
+
+[sub_resource type="FontFile" id="FontFile_1u8w0"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/3/0/ascent = 0.0
+cache/0/3/0/descent = 0.0
+cache/0/3/0/underline_position = 0.0
+cache/0/3/0/underline_thickness = 0.0
+cache/0/3/0/scale = 1.0
+cache/0/4/0/ascent = 0.0
+cache/0/4/0/descent = 0.0
+cache/0/4/0/underline_position = 0.0
+cache/0/4/0/underline_thickness = 0.0
+cache/0/4/0/scale = 1.0
+cache/0/5/0/ascent = 0.0
+cache/0/5/0/descent = 0.0
+cache/0/5/0/underline_position = 0.0
+cache/0/5/0/underline_thickness = 0.0
+cache/0/5/0/scale = 1.0
+cache/0/6/0/ascent = 0.0
+cache/0/6/0/descent = 0.0
+cache/0/6/0/underline_position = 0.0
+cache/0/6/0/underline_thickness = 0.0
+cache/0/6/0/scale = 1.0
+cache/0/7/0/ascent = 0.0
+cache/0/7/0/descent = 0.0
+cache/0/7/0/underline_position = 0.0
+cache/0/7/0/underline_thickness = 0.0
+cache/0/7/0/scale = 1.0
+cache/0/8/0/ascent = 0.0
+cache/0/8/0/descent = 0.0
+cache/0/8/0/underline_position = 0.0
+cache/0/8/0/underline_thickness = 0.0
+cache/0/8/0/scale = 1.0
+cache/0/9/0/ascent = 0.0
+cache/0/9/0/descent = 0.0
+cache/0/9/0/underline_position = 0.0
+cache/0/9/0/underline_thickness = 0.0
+cache/0/9/0/scale = 1.0
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/11/0/ascent = 0.0
+cache/0/11/0/descent = 0.0
+cache/0/11/0/underline_position = 0.0
+cache/0/11/0/underline_thickness = 0.0
+cache/0/11/0/scale = 1.0
+cache/0/12/0/ascent = 0.0
+cache/0/12/0/descent = 0.0
+cache/0/12/0/underline_position = 0.0
+cache/0/12/0/underline_thickness = 0.0
+cache/0/12/0/scale = 1.0
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1bvp3")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource("2_lswn8")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(884, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(141, 16)
+texture = ExtResource("2_4c57u")
+offset = Vector2(194, 122)
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(879, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(298, 131)
+texture = ExtResource("4_qsp4k")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(1260, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(399, 96)
+texture = ExtResource("5_kq58d")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 0.4)
+motion_mirroring = Vector2(560, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(376, 219)
+texture = ExtResource("6_kq58d")
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(952, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(367, 229)
+texture = ExtResource("2_0odxb")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(950, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(367, 226)
+texture = ExtResource("3_lswn8")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.7, 0.7)
+motion_mirroring = Vector2(950, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(376, 238)
+texture = ExtResource("3_lswn8")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(286, 199)
+
+[node name="playersprite" type="Sprite2D" parent="Player"]
+position = Vector2(-164, -22)
+texture = ExtResource("1_ig7tw")
+script = ExtResource("4_efxa6")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-17, -48)
+zoom = Vector2(0.8, 0.8)
+
+[node name="SmokeTrail" type="GPUParticles2D" parent="Player"]
+z_index = -1
+position = Vector2(-189, 2)
+amount = 6
+amount_ratio = 0.559
+texture = ExtResource("5_dg77c")
+lifetime = 0.43
+preprocess = 1.0
+randomness = 0.15
+collision_base_size = 0.0
+trail_lifetime = 0.6
+trail_sections = 7
+trail_section_subdivisions = 3
+process_material = SubResource("ParticleProcessMaterial_ycdy4")
+
+[node name="WordTarget" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(-270, -133)
+
+[node name="VoicePlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StarDust" parent="UI" instance=ExtResource("8_5vw27")]
+position = Vector2(-362, 61)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+offset_left = 7.0
+offset_top = 4.0
+offset_right = 305.0
+offset_bottom = 35.0
+
+[node name="HeartBar" type="HBoxContainer" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="Heart1" type="TextureRect" parent="UI/HBoxContainer/HeartBar"]
+layout_mode = 2
+texture = ExtResource("8_1u8w0")
+
+[node name="Heart2" type="TextureRect" parent="UI/HBoxContainer/HeartBar"]
+layout_mode = 2
+texture = ExtResource("8_1u8w0")
+
+[node name="Heart3" type="TextureRect" parent="UI/HBoxContainer/HeartBar"]
+layout_mode = 2
+texture = ExtResource("8_1u8w0")
+
+[node name="EnergyBar" type="TextureProgressBar" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.74
+texture_under = ExtResource("15_kq58d")
+texture_progress = ExtResource("16_seu75")
+
+[node name="FlashOverlay" type="Sprite2D" parent="UI/HBoxContainer/EnergyBar"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+position = Vector2(48, 11.8704)
+scale = Vector2(0.87037, 0.741976)
+texture = ExtResource("9_kek77")
+
+[node name="QuitButton" type="Button" parent="UI/HBoxContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(20, 15)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+theme_override_fonts/font = SubResource("FontFile_1u8w0")
+theme_override_font_sizes/font_size = 12
+text = "Quit"
+
+[node name="RepeatButton" type="TextureButton" parent="UI"]
+offset_left = 462.0
+offset_top = 2.0
+offset_right = 506.0
+offset_bottom = 48.0
+texture_normal = ExtResource("18_htxhm")
+texture_pressed = ExtResource("19_jq2sk")
+
+[node name="StarDust" parent="." instance=ExtResource("14_w48qg")]
+position = Vector2(-156, -28)
+script = ExtResource("15_vivmo")
+
+[node name="BouncyStar" parent="." instance=ExtResource("16_2cqfq")]
+position = Vector2(-90, -108)
+script = ExtResource("17_yaehf")
+
+[node name="BouncyStarVariant" parent="." instance=ExtResource("18_074og")]
+position = Vector2(-51, -107)
+script = ExtResource("17_yaehf")
+
+[node name="ZapHit" parent="." instance=ExtResource("29_seu75")]
+position = Vector2(-178, -173)
+script = ExtResource("30_htxhm")
+
+[node name="EnemyMonster" parent="." instance=ExtResource("29_kq58d")]
+position = Vector2(458, 180)
+script = ExtResource("30_seu75")
+
+[node name="Lightning" parent="." instance=ExtResource("29_htxhm")]
+script = ExtResource("30_jq2sk")
+
+[connection signal="pressed" from="UI/HBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="UI/RepeatButton" to="." method="_on_repeat_button_pressed"]

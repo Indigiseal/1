@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://c72rwsfra8xul"]
+
+[ext_resource type="Texture2D" uid="uid://dj1fcxtbviiv2" path="res://sprites/BG/BG334s.png" id="1_cjry7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ilmak"]
+atlas = ExtResource("1_cjry7")
+region = Rect2(31, 15, 124, 42)
+
+[node name="WordButton" type="TextureButton"]
+offset_left = 32.0
+offset_top = 56.0
+offset_right = 655.0
+offset_bottom = 245.0
+texture_normal = SubResource("AtlasTexture_ilmak")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0.254902, 0.196078, 0.247059, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1

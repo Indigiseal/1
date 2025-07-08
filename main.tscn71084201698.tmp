@@ -1,0 +1,113 @@
+[gd_scene load_steps=15 format=3 uid="uid://cyxl68gsu1cq3"]
+
+[ext_resource type="Script" uid="uid://ct7i66txn5nlv" path="res://Main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bjpdm7lvq3wck" path="res://sprites/Cat.png" id="1_ig7tw"]
+[ext_resource type="Texture2D" uid="uid://dv86kkwdyb4d1" path="res://sprites/BG/BG.png" id="2_4c57u"]
+[ext_resource type="PackedScene" uid="uid://b56xjfh487ppi" path="res://Effects/Scenes/WordTarget.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dgucbejb7cavx" path="res://Effects/Scenes/LightningZap.tscn" id="4_1bvp3"]
+[ext_resource type="Script" uid="uid://bsh7ju4ifcmuw" path="res://playersprite.gd" id="4_efxa6"]
+[ext_resource type="Texture2D" uid="uid://0nva1iedeiks" path="res://sprites/ui/puff.png" id="5_dg77c"]
+[ext_resource type="AudioStream" uid="uid://dpcwiqw63omel" path="res://Sounds/zap.mp3" id="5_lquwl"]
+[ext_resource type="Texture2D" uid="uid://ylqyxcn7dpax" path="res://sprites/ui/heart_full.png" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dfcswn2wi7177" path="res://sprites/ui/energy bar.png" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://37mrkd75xuyu" path="res://Effects/Scenes/star_dust.tscn" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://d1fe3iepesiba" path="res://sprites/ui/energy bar filled.png" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bsx65h7f3c2tt" path="res://Effects/Scenes/star_dust_particles.tscn" id="13_ycdy4"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ycdy4"]
+lifetime_randomness = 0.1
+inherit_velocity_ratio = 0.108
+direction = Vector3(-1, 0, 0)
+spread = 30.0
+initial_velocity_min = 24.39
+initial_velocity_max = 45.3
+gravity = Vector3(0, 0, 0)
+linear_accel_min = -14.63
+linear_accel_max = -0.700002
+attractor_interaction_enabled = false
+scale_min = 0.5
+color = Color(1, 1, 1, 0.462745)
+anim_speed_max = 0.45
+turbulence_noise_strength = 0.45
+turbulence_noise_scale = 0.862
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1bvp3")
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(26, 156)
+scale = Vector2(2.15165, 1.31128)
+texture = ExtResource("2_4c57u")
+offset = Vector2(96.8956, 85.4124)
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(286, 199)
+
+[node name="playersprite" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_ig7tw")
+script = ExtResource("4_efxa6")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-17, -48)
+zoom = Vector2(0.8, 0.8)
+
+[node name="SmokeTrail" type="GPUParticles2D" parent="Player"]
+z_index = -1
+position = Vector2(-25, 25)
+amount = 4
+amount_ratio = 0.559
+texture = ExtResource("5_dg77c")
+lifetime = 0.43
+preprocess = 1.0
+randomness = 0.15
+collision_base_size = 0.0
+trail_lifetime = 0.6
+trail_sections = 7
+trail_section_subdivisions = 3
+process_material = SubResource("ParticleProcessMaterial_ycdy4")
+
+[node name="WordTarget" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(-270, -133)
+
+[node name="VoicePlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="LightningZap" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(-300, -127)
+script = null
+
+[node name="ZapSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lquwl")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="HeartBar" type="HBoxContainer" parent="UI"]
+offset_left = 193.0
+offset_top = 19.0
+offset_right = 385.0
+offset_bottom = 40.0
+
+[node name="Heart1" type="TextureRect" parent="UI/HeartBar"]
+layout_mode = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Heart2" type="TextureRect" parent="UI/HeartBar"]
+layout_mode = 2
+texture = ExtResource("6_7mycd")
+
+[node name="Heart3" type="TextureRect" parent="UI/HeartBar"]
+layout_mode = 2
+texture = ExtResource("6_7mycd")
+
+[node name="StarDust" parent="UI" instance=ExtResource("8_5vw27")]
+position = Vector2(-362, 61)
+
+[node name="EnergyBar" type="TextureProgressBar" parent="UI"]
+offset_left = 67.0
+offset_top = 14.0
+offset_right = 175.0
+offset_bottom = 54.0
+texture_under = ExtResource("7_272bh")
+texture_progress = ExtResource("9_kek77")
+
+[node name="star_dust_particles" parent="." instance=ExtResource("13_ycdy4")]

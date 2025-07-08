@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyxl68gsu1cq3"]
+
+[ext_resource type="Script" uid="uid://ct7i66txn5nlv" path="res://Main.gd" id="1_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bjpdm7lvq3wck" path="res://sprites/Cat.png" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b56xjfh487ppi" path="res://Effects/Scenes/WordTarget.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://dgucbejb7cavx" path="res://Effects/Scenes/LightningZap.tscn" id="4_1bvp3"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_1bvp3")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(251, 48)
+texture = ExtResource("1_ig7tw")
+
+[node name="WordTarget" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(53, -47)
+
+[node name="VoicePlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="LightningZap" parent="." instance=ExtResource("4_1bvp3")]
+script = null
