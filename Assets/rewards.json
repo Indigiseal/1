@@ -1,0 +1,30 @@
+{
+  "Pet": [
+	{
+	  "name": "Bubble Dragon",
+	  "image": "res://Assets/Rewards/Pets/bubble_dragon.png"
+	},
+	{
+	  "name": "Fluffy Fox",
+	  "image": "res://Assets/Rewards/Pets/fluffy_fox.png"
+	},
+	{
+	  "name": "Sparkle Bunny",
+	  "image": "res://Assets/Rewards/Pets/sparkle_bunny.png"
+	}
+  ],
+  "Accessory": [
+	{
+	  "name": "Cool Glasses",
+	  "image": "res://Assets/Rewards/Accessories/cool_glasses.png"
+	},
+	{
+	  "name": "Gold Ring",
+	  "image": "res://Assets/Rewards/Accessories/gold_ring.png"
+	},
+	{
+	  "name": "Wizard Hat",
+	  "image": "res://Assets/Rewards/Accessories/wizard_hat.png"
+	}
+  ]
+}
